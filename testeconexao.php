@@ -27,7 +27,7 @@
 	$contato->setIdade($arrayContato['IDADE']);
 	
 
-	$contato->setIdade(28);
+	$contato->setIdade(33);
 
 	echo $contatodao->atualizarContato($contato->getId(), $contato);
 	//print_r($contatodao->inserirContato($contato));
@@ -38,13 +38,13 @@
 	echo '</pre>';
 
 
-	echo 'USUARIO QUE SERA DELETADO:';
-	$arrayContato = $contatodao->listarContatoID(43);
-	echo '<pre>';
-	print_r($arrayContato);
-	echo '</pre>';
+	//echo 'USUARIO QUE SERA DELETADO:';
+	//$arrayContato = $contatodao->listarContatoID(43);
+	//echo '<pre>';
+	//print_r($arrayContato);
+	//echo '</pre>';
 
-	echo $contatodao->deletarContato(43);
+	//echo $contatodao->deletarContato(43);
 
 	/*
 	echo '<pre>';
