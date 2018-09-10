@@ -14,6 +14,13 @@
 											));
 						self::$connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             			self::$connection->setAttribute(PDO::ATTR_ORACLE_NULLS, PDO::NULL_EMPTY_STRING);
+            			self::$connection->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
+					}
+					else if(DB_DRIVER == 'sqlite'){
+						self::$connection = new PDO(DB_DRIVER.":".DB_HOSTNAME.DB_DATABASE) 
+											or die("Erro ao abrir a base");
+						self::$connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+						self::$connection->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);					
 					}	
 				}
 				catch(PDOException $e){
